@@ -1,0 +1,155 @@
+Q1. Is there any DHCP traffic in this trace?
+Answer: Yes
+
+Q2. What is the IP of the DHCP server?
+Answer: 192.168.0.1
+
+Q3. Which company manufactured the NIC that this DHCP client is using?
+Answer: Intel
+
+Q4. Is packet #706 a fragment?
+Answer: No. MF flag = 0 and Fragment offset = 0
+
+Q5. Could this packet (packet #706) have gotten fragmented?
+Answer: Yes, the DF flag is set to ‘0’ (false)
+
+Q6. What port number do DHCP servers (bootps) listen on?
+Answer: 67
+
+Q7. What is the Host Name of the DHCP client (sender of packet #706)?
+Answer: MATTHEWS
+
+Q8. Is this client requesting any IP address, or does it already have one in mind?
+Answer: Requesting 192.168.0.100
+
+Q10. What two pieces of information can you read directly from the ASCII side of the payload?
+Answer: MATTHEWS and MSFT 5.0
+
+Q11. What layer 3 protocol is carried in packet #707?
+Answer: ARP
+
+Q12. Can you discern the purpose of packet #707 as it relates to the DHCP request in packet #706?
+Answer: The DHCP client asked for a particular IP address and the DHCP server is ensuring that no other host already has this IP.
+
+Q13. Are DHCP responses sent only to the requester (unicast), or to all on the local network?
+Answer: Broadcast to all (255.255.255.255 and FF.FF.FF.FF.FF.FF)
+
+Q14. Does DHCP use TCP or UDP?
+Answer: UDP
+
+Q15. How does the client correlate DHCP responses to its DHCP query?
+Answer: Via the Transaction ID (e.g., 0xd102b839)
+
+Q16. How long is the lease period for IPs doled out by this DHCP server?
+Answer: 1 day
+
+Q17. How would you know if a packet was a fragment?
+Answer: Either the MF flag is true (1) OR the Fragment Offset is non-zero
+
+Q18. What is the correct syntax for a display filter rule that will reveal only fragmented packets?
+Answer: ip.flags.mf==1 || ip.frag_offset > 0
+
+Q19. How many original packets did these eight fragments come from?
+Answer: 2 (IP IDs. 64811 and 64812)
+
+Q20. Is packet #724 a 1st fragment, a last fragment, or a middle fragment?
+Answer: Last
+
+Q21. Are ARP replies broadcast or only sent to the requester?
+Answer: Only sent to the requester
+
+Q22. What is the default color scheme given to ICMP error messages?
+Answer: Green lettering/numbering on a black background
+
+Q23. Looking at packet #783, what is its purpose (based on TTL)?
+Answer: Traceroute (TTL = 1)
+
+Q24. From packet #784, what initial TTL value do Cisco routers appear to use?
+Answer: 255
+
+Q25. How do we know that packet #784 is in direct response to packet #783?
+Answer: The ICMP error message carries the original IP header plus the first 8 bytes of the triggering packet.
+
+Q26. Which packet is the first coming back from the designated traceroute endpoint (201.100.6.98)?
+Answer: Packet #840
+
+Q27. What two models of Cisco routers are sending CDP information on this network?
+Answer: cisco 2500, cisco 7000
+
+Q28. What IOS Version is the Cisco 7000 router running?
+Answer: <Not found>
+
+Q29. Which of the two routers has the shortest hop to the 201.100.5.0 network?
+Answer: 201.100.1.1 (metric 1)
+
+Q30. Is the DNS client requesting iterative or recursive lookup service?
+Answer: Recursive
+
+Q31. What was the 1st IP address provided back to the client by this DNS server?
+Answer: 216.239.37.99
+
+Q33. What was the actual ISN chosen by the client in packet #6?
+Answer: 4201301299
+
+Q34. What Web browser is the client using?
+Answer: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.5) Gecko/20031007
+
+Q35. What is the keep-alive value requested by the client?
+Answer: 300
+
+Q36. Is packet #9 an IP fragment?
+Answer: No
+
+Q37. How many total packets did it take to deliver the entire logo.gif file?
+Answer: 25
+
+Q38. Did the Web Server set a cookie on this client, or did the client provide one?
+Answer: Client sent cookie in packet #6
+
+Q39. How many total packets are involved in this HTTP session?
+Answer: 19
+
+Q40. What resource was being requested?
+Answer: /~jnm/networks/book/
+
+Q41. What kind of Web server is being used in this session?
+Answer: Apache
+
+Q42. The user provided an incorrect password followed later by the correct password. What were they?
+Answer: Basic bmV0bGFiOnNwMjAwNQ==, Basic bmV0bGFiOnNwMjAwNA==
+
+Q43. What document does the user request from this website?
+Answer: /~jnm/networks/book/PrefaceMaterials/HowToUse.doc
+
+Q44. Which is true about this SSH session?
+Answer: D. Neither server nor client can be sure of the other’s identity
+
+Q45. Who chooses the session key in the SSH session?
+Answer: Client
+
+Q46. Could an attacker perform a MITM attack given the key handling?
+Answer: Yes
+
+Q47. How many packets are involved in a TCP graceful termination (‘goodbye’)?
+Answer: 4
+
+Q48. What Cipher Suite did the server choose to use in the TLS session?
+Answer: TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+
+Q50. Who is the CA for the certificate in the TLS session?
+Answer: None
+
+Q51. Who/what does the certificate bind a public key to?
+Answer: www.clarkson.edu
+
+Q52. How might we identify spoofed packets in the telnet session?
+Answer: By detecting multiple MAC addresses for a single IP (the spoofed packets show mismatched MAC addresses).
+
+Q53. What ack number does the server send the client in packet #460?
+Answer: 233
+
+Q54. What sequence number does the attacker provide in packet #461?
+Answer: 233
+
+Q55. How many bytes of payload did the attacker send in packet #461?
+Answer: 10
